@@ -1,0 +1,14 @@
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+.wrap{
+   width: 100%;
+   font-family: 'Roboto';
+}
+.container{
+   max-width: 1240px;
+   width: 90%;
+   margin: 0 auto;
+}
