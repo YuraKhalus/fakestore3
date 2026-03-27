@@ -114,16 +114,152 @@
 .hero {
    background: url('../img/b26fea69ccfd8aa5825862cdb9604a4fb493046444.jpg') no-repeat right center;
    background-size: contain;
-background-position: 95% center;
+   background-position: 95% center;
    padding: 80px 0;
    min-height: 500px;
    background-color: #f1f1f1;
 }
 
 
+
+
 .overlay {
-  position: absolute;
-  top: 50px;
-  left: 50px; /* рухай куди треба */
-  width: 100px;
+   position: absolute;
+   top: 160px;
+   right: 50px;
+   width: 120px;
+   z-index: 10;
+
+
+   animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+   0% {
+      transform: translateY(0);
+   }
+
+   50% {
+      transform: translateY(-10px);
+   }
+
+   100% {
+      transform: translateY(0);
+   }
+}
+
+
+.overlay_small {
+   width: 60px;
+   /* менша */
+   top: 370px;
+   /* інша позиція */
+   right: 580px;
+   /* рухай як хочеш */
+
+   animation: float 2s ease-in-out infinite;
+}
+
+
+.brands {
+   background: black;
+   color: white;
+   height: 100px;
+
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+
+   padding: 20px 0;
+}
+
+
+.brand:nth-child(1) {
+   font-family: 'Playfair Display', serif;
+   font-size: 24px;
+}
+
+.brand:nth-child(2) {
+   font-family: 'Montserrat', sans-serif;
+   font-weight: bold;
+}
+
+.brand:nth-child(3) {
+   font-family: 'Playfair Display', serif;
+   letter-spacing: 2px;
+}
+
+.brand:nth-child(4) {
+   font-family: 'Playfair Display', serif;
+   font-style: italic;
+}
+
+.brand:nth-child(5) {
+   font-family: cursive;
+}
+
+
+.products {
+   padding: 60px 0;
+   text-align: center;
+}
+
+.section_title {
+   font-size: 28px;
+   margin-bottom: 30px;
+   font-weight: bold;
+}
+
+.products_grid {
+   display: grid;
+   grid-template-columns: repeat(4, 1fr);
+   gap: 20px;
+}
+
+.wh {
+   width: 200px;
+   height: 300px;
+
+}
+
+.section_title {
+   font-size: 38px;
+   font-weight: 900;
+   line-height: 1;
+   margin-bottom: 20px;
+   margin-left: 65px;
+   display: inline-block;
+   transform: scaleY(0.9);
+   transform-origin: center;
+   letter-spacing: -1px;
+}
+
+.product_card {
+   border: solid 1px red;
+
+
+}
+
+.first {
+   margin-left: 60px;
+   margin-top: 30px;
+   margin-bottom: 30px;
+}
+
+.last {
+   margin-top: 30px;
+   margin-right: 60px;
+   margin-bottom: 30px;
+}
+
+.rightcenter {
+   margin-top: 30px;
+   margin-left: 3px;
+   margin-bottom: 30px;
+}
+
+.leftcenter {
+   margin-top: 30px;
+   margin-right: 3px;
+   margin-bottom: 30px;
 }
