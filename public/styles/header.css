@@ -237,6 +237,9 @@
    letter-spacing: -1.5px;
    transform: scaleX(1.2);
 }
+.py-5{
+   overflow-x: hidden;
+}
 
 .all {
    background: rgb(255, 255, 255);
