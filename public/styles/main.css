@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Відгуки */
+.reviews-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.review-card {
+    border: 1px solid #eee;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.verified { color: green; }
+
+.load-more {
+    display: block;
+    margin: 30px auto;
+    padding: 10px 30px;
+    border: 1px solid #ccc;
+    background: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+/* Рекомендації */
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin: 50px 0;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.product-img {
+    background: #f0f0f0;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.product-img img { width: 100%; display: block; }
+
+.old-price { text-decoration: line-through; color: #999; }
+.discount { color: red; background: #ffebeb; padding: 2px 8px; border-radius: 10px; font-size: 0.8rem; }
+
+/* Newsletter */
+.newsletter-section {
+    background: #000;
+    color: white;
+    border-radius: 20px;
+    margin: 50px auto -80px;
+    max-width: 1200px;
+    padding: 40px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+}
+
+.newsletter-container h2 { width: 50%; font-size: 2rem; }
+.newsletter-form { width: 40%; display: flex; flex-direction: column; gap: 10px; }
+.newsletter-form input { padding: 12px; border-radius: 25px; border: none; }
+
+.btn-white {
+    background: white;
+    color: black;
+    padding: 12px;
+    border-radius: 25px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: black;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Footer */
+.footer {
+    background: #f0f0f0;
+    padding: 140px 20px 40px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-info { width: 25%; }
+.footer-links {
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.link-group h4 { margin-bottom: 15px; font-size: 0.9rem; }
+.link-group ul { list-style: none; }
+.link-group li { margin-bottom: 10px; color: #666; font-size: 0.85rem; cursor: pointer; }
+
+.footer-bottom {
+    max-width: 1200px;
+    margin: 40px auto 0;
+    padding-top: 20px;
+    border-top: 1px solid #ccc;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: #666;
+}

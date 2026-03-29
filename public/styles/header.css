@@ -1,0 +1,30 @@
+.header{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   margin-top: 24px;
+}
+.header_logo{
+   font-size: 32px;
+   font-weight: bold;
+}
+.header_menu{
+   display: flex;
+   gap: 24px;
+}
+.header_menu_link{
+   text-decoration: none;
+   font-size: 16px;
+   color: #000;
+}
+.header_input{
+   background-color: #F0F0F0;
+   border: none;
+   padding: 16px 25px;
+   border-radius: 62px;
+   width: 40%;
+}
+.header_icons{
+   display: flex;
+   gap: 14px;
+}
