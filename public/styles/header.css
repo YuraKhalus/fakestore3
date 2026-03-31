@@ -342,5 +342,37 @@
 }  
 
 
+.product-card {
 
+   display: flex;
+   flex-direction: column;
+}
+
+.product-card img {
+   height: 220px;
+   object-fit: contain;
+}
+
+.card-body {
+   display: flex;
+   flex-direction: column;
+}
+
+.card-body .price {
+   margin-top: auto;
+}
+
+.card-title {
+   min-height: 60px;
+}
+
+.card-body button {
+   margin-top: 10px;
+}
+
+
+.view {
+   background-color: #000;
+   border: #333;
+}
  
