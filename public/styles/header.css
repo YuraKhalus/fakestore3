@@ -237,7 +237,8 @@
    letter-spacing: -1.5px;
    transform: scaleX(1.2);
 }
-.py-5{
+
+.py-5 {
    overflow-x: hidden;
 }
 
@@ -251,7 +252,7 @@
    font-size: 16px;
    cursor: pointer;
    margin-bottom: 40px;
-   
+
    width: 218px;
    height: 52px;
    font-family: Noto Sans, sans-serif;
@@ -280,10 +281,14 @@
 }
 
 .my-line {
-  border: none; /* Видаляємо стандартний стиль */
-  border-top: 1px solid #525151; /* Додаємо свою лінію: товщина, тип, колір */
-  width: 100%; /* Ширина лінії */
-  margin: 20px 0; /* Відступи зверху/знизу */
+   border: none;
+   /* Видаляємо стандартний стиль */
+   border-top: 1px solid #525151;
+   /* Додаємо свою лінію: товщина, тип, колір */
+   width: 100%;
+   /* Ширина лінії */
+   margin: 20px 0;
+   /* Відступи зверху/знизу */
 }
 
 
@@ -339,7 +344,7 @@
    padding: 15px 0;
    font-size: 14px;
    color: #aaa;
-}  
+}
 
 
 .product-card {
@@ -375,4 +380,9 @@
    background-color: #000;
    border: #333;
 }
- 
+
+.view:hover{
+   background-color: #333;
+}
+
+
