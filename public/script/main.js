@@ -7,10 +7,10 @@ const jewelryContainer = document.querySelector('.jewelry-container');
 
 
 
-function renderCard(product, container) {
+function renderCard(product, container, slider) {
 
     let divEl = document.createElement('div');
-    divEl.classList.add('card', 'product-card', 'col-md-3',);
+    divEl.classList.add('card', 'product-card', 'col-md-3', `${slider}`);
     divEl.innerHTML = `
  <img src="${product.image}"
      class="card-img-top">
@@ -56,7 +56,7 @@ const fetchProducts = async () => {
     womensContainer.innerHTML = '';
 
         womensData.forEach(product => {
-                renderCard(product, womensContainer);
+                renderCard(product, womensContainer, 'swiper-slide');
         
         });
   

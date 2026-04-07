@@ -386,3 +386,27 @@
 }
 
 
+.swiper-wrapper {
+   margin-bottom: 50px;
+}
+
+    .swiper {
+      width: 100%;
+      height: 100%;
+    }
+
+    /* .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    } */
+
+    /* .swiper-slide img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    } */
