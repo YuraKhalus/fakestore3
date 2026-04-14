@@ -189,3 +189,20 @@
     background-color: #000;
     color: #fff;
 }
+
+/* Базові стилі для кнопок розміру (якщо їх ще немає) */
+.size-option {
+    padding: 10px 20px;
+    border-radius: 9999px;
+    background-color: #F0F0F0; /* Світло-сірий фон */
+    color: #666;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+}
+
+/* Стиль для активної кнопки */
+.size-option.active {
+    background-color: black !important;
+    color: white !important;
+}

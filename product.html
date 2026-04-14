@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product Details</title>
+   
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+    </style> 
     <link rel="stylesheet" href="./public/styles/header.css">
     <link rel="stylesheet" href="./public/styles/style.css">  
     <link rel="stylesheet" href="./public/styles/product.css">
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-        body { font-family: 'Inter', sans-serif; }
-    </style>
 </head>
 <body>
      <div class="wrap">
@@ -49,23 +50,21 @@
 
          
             <div class="products-container">
-                <div class="thumbnails">
-                    <img src="./public/img/t-shirt-image-1.png" alt="1" class="active">
-                    <img src="./public/img/t-shirt-image-2.png" alt="2">
-                    <img src="./public/img/t-shirt-image-3.png" alt="3">
-                </div>
             <div class="product-image">
-            <img src="./public/img/t-shirt-image-1.png" class="img-fluid rounded-start" width="444px" height="530px">
+            <img src="./public/img/t-shirt-image-1.png" id="product-img" class="img-fluid rounded-start" width="444px" height="530px">
             </div>
             <div class="product-info">
-            <h1 class="text-3xl font-bold mb-4 uppercase">ONE LIFE GRAPHIC T-SHIRT</h1>
-            
+            <h1 class="text-3xl font-bold mb-4 uppercase" id="title">ONE LIFE GRAPHIC T-SHIRT</h1>
+             <div class="flex items-center gap-2">
+                <div class="text-yellow-400 text-2xl" id="stars">★</div>
+                <span class="text-xl text-gray-500" ><span id="rate">5.0</span>/<span class="text-gray-300">5</span></span>
+            </div>
             <div class="price flex items-center gap-3 mb-4">
-        <h3 class="text-2xl font-bold">$260</h3>
-        <span class="text-gray-400 line-through text-xl">$300</span>
+        <h3 class="text-2xl font-bold" id="price">$260</h3>
+        <span class="text-gray-400 line-through text-xl" id="fullprice">$300</span>
         <span class="bg-red-100 text-red-500 px-3 py-1 rounded-full text-sm font-semibold">-40%</span>
     </div>
-            <p class="description">This graphic t-shirt which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.</p>
+            <p class="description" id="description">This graphic t-shirt which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.</p>
 
             <hr class="divider">
             
@@ -81,7 +80,7 @@
         <hr class="divider">
 
             <p>Select Size</p>
-            <div class="size-options">
+            <div class="size-options" id="sizebuttons">
                 
                 <button class="size-option">Small</button>
                 <button class="size-option">Medium</button>
@@ -95,7 +94,7 @@
 
             <div class="actions">
             <div class="quantity-selector">
-                <button>-</button> <span>1</span> <button>+</button>
+                <button id="minus">-</button> <span id="quantity">1</span> <button id="plus">+</button>
             </div>
             <button class="add-to-cart">Add to Cart</button>
             </div>
@@ -129,7 +128,7 @@
         </div>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 reviews-container" >
 
         <div class="border border-gray-200 rounded-2xl p-6 flex flex-col">
             <div class="flex justify-between items-start mb-4">
@@ -311,5 +310,6 @@
 </footer>
       
    </div>
+   <script src="./public/script/product.js"></script>
 </body>
 </html>
