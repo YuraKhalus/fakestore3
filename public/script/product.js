@@ -14,6 +14,7 @@ const minus = document.querySelector('#minus')
 const quantity = document.querySelector('#quantity')
 const plus = document.querySelector('#plus')
 const sizebuttons = document.querySelectorAll('#sizebuttons')
+const addToCard = document.querySelector('.add-to-cart')
 
 let counter = 1
 
@@ -144,3 +145,41 @@ function likeReview(rate){
     
     return likesBox.outerHTML;
 }
+
+let shoppingCart = localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : [];
+
+addToCard.addEventListener('click', () => {
+    let product = {
+        id: productId,
+        quantity: counter
+    }
+    if(shoppingCart.find(prod => prod.id === product.id) == undefined){
+        shoppingCart.push(product)
+        localStorage.setItem('cart', JSON.stringify(shoppingCart))
+        alert('Товар успішно доповнений в корзину!')
+    } else if (shoppingCart.find(prod => prod.id === productId && prod.quantity == product.quantity)){
+        alert('Цей товар вже є у вашій корзині в к-ті ' + shoppingCart.find(prod => prod.id === product.id).quantity)
+    } else{
+        shoppingCart.find(prod => prod.id === product.id).quantity = product.quantity;
+        alert('Ваш товар змінено в к-ті' + shoppingCart.find(prod => prod.id === product.id).quantity)
+    }
+    // shoppingCart.forEach(prod => {
+    //     if(prod.id === productId && prod.quantity == prod.quantity){
+    //         alert('Цей товар уже є в вашій корзині'+ prod.quantity)
+    //     } else if (prod.id === productId) {
+    //         prod.quantity = product.quantity
+    //         localStorage.setItem('cart', JSON.stringify(shoppingCart))
+    //     }
+    //      else{
+    //         shoppingCart.push(product)
+    //         localStorage.setItem('cart', JSON.stringify(shoppingCart))
+    //     }
+    // })
+    // console.log(shoppingCart[0].);
+    
+    
+
+    console.log(shoppingCart);
+    
+    
+})
