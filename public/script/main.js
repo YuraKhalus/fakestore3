@@ -86,7 +86,7 @@ const fetchProducts = async () => {
 
         electronicsData.forEach(product => {
             
-                renderCard(product, electronicsContainer);
+                renderCard(product, electronicsContainer, 'swiper-slide');
           
         });
  
