@@ -1,0 +1,190 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 24px;
+    margin-bottom: 24px;
+}
+
+.header_logo {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.header_menu {
+    display: flex;
+    gap: 24px;
+}
+
+.header_menu_link {
+    text-decoration: none;
+    font-size: 16px;
+    color: #000;
+}
+
+.header_input {
+    flex-grow: 1;
+    padding: 10px 20px;
+    border-radius: 12px !important;
+    border: 1px solid #eee;
+    background-color: #f5f5f5;
+    outline: none;
+}
+
+.header_icons {
+    display: flex;
+    gap: 14px;
+}
+
+.product-img {
+    width: 80px;
+    /* або будь-який інший розмір */
+    height: auto;
+    /* щоб не спотворювати пропорції */
+}
+
+.amount-pos {
+    display: flex;
+    align-items: center;
+    margin-left: 30px;
+    padding-top: 60px;
+}
+
+
+
+
+.delete {
+    width: 20px;
+    height: auto;
+    position: absolute;
+    left: 645px;
+    bottom: 90px;
+}
+
+
+.title-text {
+    font-size: 44px;
+    font-weight: 1000;
+    display: inline-block;
+    transform: scaleY(0.9);
+    transform-origin: center;
+    letter-spacing: -2px;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.header_input {
+    flex-grow: 1;
+    border-radius: 25px;
+    padding: 10px 20px;
+    border: none;
+    background-color: #f1f1f1;
+}
+
+.btn-dark {
+    border-radius: 12px;
+
+}
+
+/* .product-card {
+   border: none;
+   transition: 0.3s;
+}
+
+.product-card img {
+   width: 100%;
+}
+
+.product-card:hover {
+   transform: translateY(-5px);
+   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.price {
+   font-weight: bold;
+   font-size: 18px;
+   display: flex;
+   justify-content: flex-start;
+}
+
+.card-title {
+   font-weight: 450;
+   display: flex;
+   justify-content: flex-start;
+}
+
+ */
+
+
+
+
+.offer {
+    background: black;
+    color: white;
+    height: 38px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 200;
+    transform: scaleY(1);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px 0;
+}
+
+
+
+
+.footer {
+    background: #111;
+    color: white;
+    margin-top: 60px;
+}
+
+.footer_content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding: 50px 0;
+}
+
+.footer_logo {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.footer_text {
+    max-width: 300px;
+    color: #aaa;
+}
+
+.footer_links {
+    display: flex;
+    gap: 60px;
+}
+
+.footer_links h4 {
+    margin-bottom: 10px;
+}
+
+.footer_links a {
+    display: block;
+    text-decoration: none;
+    color: #aaa;
+    margin-bottom: 6px;
+    font-size: 14px;
+}
+
+.footer_links a:hover {
+    color: white;
+}
+
+.footer_bottom {
+    text-align: center;
+    border-top: 1px solid #333;
+    padding: 15px 0;
+    font-size: 14px;
+    color: #aaa;
+}

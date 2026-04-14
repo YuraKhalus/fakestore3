@@ -151,11 +151,11 @@
 
 .overlay_small {
    width: 60px;
-   /* менша */
+  
    top: 370px;
-   /* інша позиція */
+   
    right: 580px;
-   /* рухай як хочеш */
+   
 
    animation: float 2s ease-in-out infinite;
 }
