@@ -34,9 +34,6 @@ function renderCard(product, quantity, container) {
     container.appendChild(divEl);
 }
 
-
-
-
 function fetchProduct(id, quantity) {
     fetch( `${API_URL}/${id}`)
         .then(res => res.json())
@@ -44,23 +41,13 @@ function fetchProduct(id, quantity) {
             console.log(data);
             renderCard(data, quantity, container);
         });
-
-        
-
 }
 
-fetchProduct(1);
-fetchProduct(18);
-
-
 console.log(shoppingCart);
-
-
 shoppingCart.forEach(product => {
    console.log(product);
    fetchProduct(product.id, product.quantity)
 
-   
 })
 
 
