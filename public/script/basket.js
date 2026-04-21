@@ -1,22 +1,7 @@
 const API_URL = 'https://fakestoreapi.com/products';
 
-// знайти контейнер
 const container = document.querySelector('.col-md-8');
 
-// отримати дані
-fetch(API_URL)
-    .then(res => res.json())
-    .then(data => {
-        console.log(data);
-
-        // очистити стару картку (щоб не дублювалась)
-        container.innerHTML = '';
-
-        // вивести кілька товарів
-        data.slice(0, 1).forEach(product => {
-            renderCard(product, container);
-        });
-    });
 
 
 function renderCard(product, container) {
@@ -45,3 +30,25 @@ function renderCard(product, container) {
 
     container.appendChild(divEl);
 }
+
+
+
+
+function fetchProduct(id) {
+    fetch( `${API_URL}/${id}`)
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+
+
+            container.innerHTML = '';
+
+
+         renderCard(data, container);
+        });
+        
+
+}
+
+fetchProduct(1);
+fetchProduct(18);
