@@ -163,22 +163,7 @@ addToCard.addEventListener('click', () => {
         shoppingCart.find(prod => prod.id === product.id).quantity = product.quantity;
         alert('Ваш товар змінено в к-ті' + shoppingCart.find(prod => prod.id === product.id).quantity)
     }
-    // shoppingCart.forEach(prod => {
-    //     if(prod.id === productId && prod.quantity == prod.quantity){
-    //         alert('Цей товар уже є в вашій корзині'+ prod.quantity)
-    //     } else if (prod.id === productId) {
-    //         prod.quantity = product.quantity
-    //         localStorage.setItem('cart', JSON.stringify(shoppingCart))
-    //     }
-    //      else{
-    //         shoppingCart.push(product)
-    //         localStorage.setItem('cart', JSON.stringify(shoppingCart))
-    //     }
-    // })
-    // console.log(shoppingCart[0].);
     
-    
-
     console.log(shoppingCart);
     
     
