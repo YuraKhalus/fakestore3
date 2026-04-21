@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 const API_URL = 'https://fakestoreapi.com/products';
 
 const container = document.querySelector('.col-md-8');
@@ -53,7 +52,7 @@ function fetchProduct(id) {
 
 fetchProduct(1);
 fetchProduct(18);
-=======
+
 const API_URL = 'https://fakestoreapi.com/';
 
 const shoppingCart = localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : [];
@@ -79,4 +78,15 @@ shoppingCart.forEach(product => {
    
 })
 
->>>>>>> 39b517d082f495d378bd6aafd102e925d758d75d
+
+
+
+
+divEl.querySelector('.plus').addEventListener('click', () => {
+    changeQuantity(index, 1);
+});
+
+
+divEl.querySelector('.minus').addEventListener('click', () => {
+    changeQuantity(index, -1);
+});
