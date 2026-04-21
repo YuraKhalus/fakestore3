@@ -1,5 +1,14 @@
 const API_URL = 'https://fakestoreapi.com/products';
 const container = document.querySelector('.col-md-8');
+const subtotalEl = document.querySelector('.subtotal');
+const discountEl = document.querySelector('.discount');
+const discountHeader = document.querySelector('.discount-header');
+const deliveryFeeEl = document.querySelector('.delivery-fee');
+const totalEl = document.querySelector('.total');
+let subtotal = 0;
+let discount = 0;
+let deliveryFee = 15;
+let total = 0;
 
 const shoppingCart = localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : [];
 
@@ -19,7 +28,7 @@ function renderCard(product, quantity, container) {
             <div>$${product.price}</div>
         </div>
 
-        <button class="btn btn-link text-danger me-3 fs-5 btn-delete">
+        <button class="btn btn-link text-danger me-3 fs-5 btn-delete" data-id="${product.id}">
             <img src="public/img/delete_14090243.png" class="delete">
         </button>
 
@@ -32,6 +41,8 @@ function renderCard(product, quantity, container) {
 
    //  container.innerHTML += divEl.outerHTML;
     container.appendChild(divEl);
+    deleteBtnIntitializer();
+    calculateSubtotal(product.price);
 }
 
 function fetchProduct(id, quantity) {
@@ -50,8 +61,30 @@ shoppingCart.forEach(product => {
 
 })
 
+function deleteBtnIntitializer() {
+   const deleteBtns = document.querySelectorAll('.btn-delete')
+   console.log(deleteBtns);
+   deleteBtns.forEach(btn => {
+      btn.addEventListener('click',() => {
+         deleteProduct(btn, btn.dataset.id);
+      })
+   })
+}
 
+function deleteProduct(btn, id){
+   btn.parentElement.remove();
+   console.log(shoppingCart.findIndex(prod => prod.id == id));
+   if(shoppingCart.findIndex(prod => prod.id == id) !== -1){
+      shoppingCart.splice(shoppingCart.findIndex(prod => prod.id == id), 1);
+      console.log(shoppingCart);
+      localStorage.setItem('cart', JSON.stringify(shoppingCart))
+   }
+}
 
+function calculateSubtotal(productPrice){
+   subtotal += productPrice;
+   subtotalEl.innerHTML = `$ ${subtotal}`
+}
 
 
  
