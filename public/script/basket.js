@@ -32,59 +32,89 @@ function renderCard(product, quantity, container) {
             <img src="public/img/delete_14090243.png" class="delete">
         </button>
 
-        <div class="amount-pos">
-            <button class="btn btn-light">-</button>
+        <div class="amount-pos" data-id="${product.id}">
+            <button class="btn btn-light minus">-</button>
             <span class="mx-2">${quantity}</span>
-            <button class="btn btn-light">+</button>
+            <button class="btn btn-light plus">+</button>
         </div>
     `;
-
-   //  container.innerHTML += divEl.outerHTML;
     container.appendChild(divEl);
-    deleteBtnIntitializer();
-    calculateSubtotal(product.price);
+    calculateSubtotalQuantity(product.price, 'plus', quantity);
 }
 
 function fetchProduct(id, quantity) {
     fetch( `${API_URL}/${id}`)
         .then(res => res.json())
         .then(data => {
-            console.log(data);
             renderCard(data, quantity, container);
+            shoppingCart.find(product => product.id == id).price = data.price;
         });
 }
 
 console.log(shoppingCart);
 shoppingCart.forEach(product => {
-   console.log(product);
    fetchProduct(product.id, product.quantity)
-
 })
 
-function deleteBtnIntitializer() {
-   const deleteBtns = document.querySelectorAll('.btn-delete')
-   console.log(deleteBtns);
-   deleteBtns.forEach(btn => {
-      btn.addEventListener('click',() => {
-         deleteProduct(btn, btn.dataset.id);
-      })
-   })
-}
+container.addEventListener('click', (e)=> {
+   if(e.target.parentElement.classList.contains('btn-delete')){
+      deleteProduct(e.target.parentElement, e.target.parentElement.dataset.id);
+   }
+   if(e.target.classList.contains('plus') || e.target.classList.contains('minus')){
+      counterControl(e.target.parentElement.dataset.id, e.target.parentElement, e.target.classList.contains('plus') ? 'plus' : 'minus');
+   }
+})
 
 function deleteProduct(btn, id){
    btn.parentElement.remove();
-   console.log(shoppingCart.findIndex(prod => prod.id == id));
-   if(shoppingCart.findIndex(prod => prod.id == id) !== -1){
-      shoppingCart.splice(shoppingCart.findIndex(prod => prod.id == id), 1);
+   let cardIndex = shoppingCart.findIndex(prod => prod.id == id);
+   if (cardIndex !== -1){
+      calculateSubtotalQuantity(shoppingCart[cardIndex].price, 'minus', shoppingCart[cardIndex].quantity,)
+      shoppingCart.splice(cardIndex, 1);
       console.log(shoppingCart);
-      localStorage.setItem('cart', JSON.stringify(shoppingCart))
+      // localStorage.setItem('cart', JSON.stringify(shoppingCart))
+      saveToLocalStorage(shoppingCart);
    }
 }
 
-function calculateSubtotal(productPrice){
-   subtotal += productPrice;
-   subtotalEl.innerHTML = `$ ${subtotal}`
+function counterControl(id, box, operation){
+   let currentProduct = shoppingCart.find(prod => prod.id === id);
+   // (operation === 'plus') ? currentProduct.quantity++ : currentProduct.quantity--;
+
+   if(operation === 'plus'){
+      if (currentProduct.quantity < 10){
+         currentProduct.quantity++;
+         calculateSubtotalQuantity(currentProduct.price, 'plus')
+      } else{
+         alert('Обмежена пропозиція: максимум 10 одиниць в 1 кошику')
+      }
+   } 
+
+   if (operation === 'minus'){
+      if (currentProduct.quantity >= 2){
+         currentProduct.quantity--;
+         calculateSubtotalQuantity(currentProduct.price, 'minus')
+      } else{
+         alert('Мінімальна кількисть 1 одиниця.')
+      }
+   }
+   box.children[1].innerHTML = currentProduct.quantity  
+   // localStorage.setItem('cart', JSON.stringify(shoppingCart));
+   saveToLocalStorage(shoppingCart)
 }
 
+function calculateSubtotalQuantity(price, operation, quantity = 1){
+   if(operation === 'plus'){
+      subtotal += price * quantity;
+   }
+   if (operation === 'minus'){
+      subtotal -= price * quantity;
+   }
+   subtotalEl.innerHTML = `$ ${subtotal.toFixed(2)}`   
+}
 
- 
+function saveToLocalStorage(arr){
+   let clearArr = arr.map(product => ({ id: product.id, quantity: product.quantity}))
+   localStorage.setItem('cart', JSON.stringify(clearArr))
+}
+
