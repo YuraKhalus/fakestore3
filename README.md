@@ -1,7 +1,7 @@
 # fakestore3
 A team project of the Creator IT Academy students, an online store using Fake Store API
 
-![screen of main page](./)
+![screen of main page](./public/img/screen.png)
 
 ## Contributors
 This project was developed by:
