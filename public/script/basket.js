@@ -102,6 +102,9 @@ function counterControl(id, box, operation){
    // localStorage.setItem('cart', JSON.stringify(shoppingCart));
    saveToLocalStorage(shoppingCart)
 }
+function calculateTotal(discount = 0){
+   totalEl.innerHTML = `$${subtotal - discount + 15}`
+}
 
 function calculateSubtotalQuantity(price, operation, quantity = 1){
    if(operation === 'plus'){
@@ -110,11 +113,46 @@ function calculateSubtotalQuantity(price, operation, quantity = 1){
    if (operation === 'minus'){
       subtotal -= price * quantity;
    }
-   subtotalEl.innerHTML = `$ ${subtotal.toFixed(2)}`   
+   subtotalEl.innerHTML = `$ ${subtotal.toFixed(2)}`
+   discountCalculate(promoCodeDiscount)
+   calculateTotal()   
 }
+
 
 function saveToLocalStorage(arr){
    let clearArr = arr.map(product => ({ id: product.id, quantity: product.quantity}))
    localStorage.setItem('cart', JSON.stringify(clearArr))
 }
 
+const promoCode = [
+   {
+      code: 'fakestore',
+      discount: 20
+   },
+   {
+      code: 'free',
+      discount: 100
+   },
+   {
+      code: 'half',
+      discount: 50
+   }
+]
+
+const promoCodeInp = document.querySelector('.promocodeInp');
+const promoCodeBtn = document.querySelector('.promocodeBtn');
+let promoCodeDiscount = 0;
+promoCodeBtn.addEventListener('click', () => {
+   let promoCodeStr = promoCodeInp.value;
+   let promoCodeFind = promoCode.find(promo => promo.code == promoCodeStr);
+   promoCodeDiscount = promoCodeFind ? promoCodeFind.discount : 0;
+   console.log(promoCodeDiscount);
+   discountCalculate(promoCodeDiscount)
+})
+
+function discountCalculate(discount = 0){
+   let discountPrice = (discount / 100) * subtotal;
+   discountEl.innerHTML = `$ ${discountPrice.toFixed(2)}`
+   discountHeader.innerHTML = `Discount (${discount}%)`
+   calculateTotal(discountPrice)
+}
