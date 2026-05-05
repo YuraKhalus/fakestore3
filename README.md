@@ -7,16 +7,20 @@ A team project of the Creator IT Academy students, an online store using Fake St
 This project was developed by:
 - [**[Name]**](https://github.com/username1) – Frontend development  
 - [**[Yurii Khalus]**](https://github.com/YuraKhalus) – Team Leader, Architect, Teacher
+- [**[Maxim]**](https://github.com/MaximSinko) – Frontend development  
 
 # Pages
 
 ## Main page
-Author: **[Olena]**
+Author: **[Maxim]**
 ### What was done:
 - Home page layout
 - Page title and description
 - Getting information about products from API
 - Button script
+- Cards with products
+- Slider
+- 
 
 ## Product page
 Author: **[Olena]**
