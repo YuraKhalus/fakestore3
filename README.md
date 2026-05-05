@@ -7,7 +7,8 @@ A team project of the Creator IT Academy students, an online store using Fake St
 This project was developed by:
 - [**[Name]**](https://github.com/username1) – Frontend development  
 - [**[Yurii Khalus]**](https://github.com/YuraKhalus) – Team Leader, Architect, Teacher
-- [**[Maxim]**](https://github.com/MaximSinko) – Frontend development  
+- [**[Maxim]**](https://github.com/MaximSinko) – Frontend development
+- [**[Dmytro]**](https://github.com/CvineJineMaine) – Frontend development  
 
 # Pages
 
@@ -23,17 +24,14 @@ Author: **[Maxim]**
 - 
 
 ## Product page
-Author: **[Olena]**
+Author: **[Dmytro]**
 ### What was done:
 - Product page layout
 - Getting information about products from API
 - Page script
+- Base style layout from Tailwind
+- Cards with rating
+- Product Card
 
-##  page
-Author: **[Roman]**
-### What was done:
-- Cards
-- Added counter
-- Botton "Remove"
 
 
