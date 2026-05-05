@@ -21,7 +21,7 @@ Author: **[Maxim]**
 - Button script
 - Cards with products
 - Slider
-- 
+  
 
 ## Product page
 Author: **[Dmytro]**
